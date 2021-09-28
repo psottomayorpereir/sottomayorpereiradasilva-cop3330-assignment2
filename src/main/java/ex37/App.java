@@ -19,7 +19,7 @@ public class App {
         String lowerLetters = "abcdefghijklmnopqrstuvwxyz";
         String specChars = "!@#$";
         String numbers = "1234567890";
-        char c;
+        char c='a';
         int number = 0;
 
         System.out.print("What is the minimum length? ");
@@ -31,7 +31,19 @@ public class App {
 
         total = len + spec + num;
         int temp=total;
+        int a=spec+num;
         while (temp != 0) {
+            while(a>0){
+                number = rand.nextInt(1);
+                if(number==0){
+                    c = lowerLetters.charAt(rand.nextInt(lowerLetters.length()));
+                }
+                if(number==1){
+                    c = upperLetters.charAt(rand.nextInt(upperLetters.length()));
+                }
+                list.add(c);
+                a=a-1;
+            }
             number = rand.nextInt(4);
             if (number == 0) {
                 c = upperLetters.charAt(rand.nextInt(upperLetters.length()));
